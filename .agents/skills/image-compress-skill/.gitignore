@@ -1,0 +1,23 @@
+# Rust
+target/
+**/target/
+
+# System
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temp Files
+*.tmp
+*.tmp_img
+*.log
+
+# Test Artifacts (Generated)
+web_test/processed/
+web_test/images/test*.png
+# Keep hq_*.png and large/medium/small.png as test assets, but ignore generated ones if any
+
+# IDEs
+.vscode/
+.idea/
+*.swp
