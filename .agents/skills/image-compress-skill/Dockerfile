@@ -32,8 +32,8 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y libssl1.1 ca-certificates && rm -rf /var/lib/apt/lists/*
 
 # Copy binary from builder
-COPY --from=builder /app/target/release/image-compress-pro /usr/local/bin/image-compress-pro
+COPY --from=builder /app/target/release/image-compress-tool /usr/local/bin/image-compress-tool
 
 # Default entrypoint
-ENTRYPOINT ["image-compress-pro"]
+ENTRYPOINT ["image-compress-tool"]
 CMD ["--help"]
