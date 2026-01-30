@@ -23,9 +23,18 @@ The optimal compression strategy depends on the input content type and the targe
 2.  **Fallback to PNG**: If the input is a simple graphic (low color count) OR if WebP results in a larger file (rare, but happens with simple shapes), use the Quantized PNG pipeline.
 3.  **Strict Quality**: If the user demands "Lossless" or "No visual change", skip quantization and use only `oxipng` (PNG) or Lossless WebP.
 
-## 2. Tool Configuration & Best Practices
+## Setup
 
-### A. Lossy WebP (via `libwebp` / `webp` crate)
+This skill requires the `image-compress-tool` binary.
+
+If the tool is not found, the agent should run:
+```bash
+./scripts/install.sh
+```
+
+## Usage
+
+### 1. Smart Compression (Auto)
 **Best for**: Photos, complex gradients, web assets.
 *   **Quality (`-q`)**:
     *   **80-85**: Sweet spot for web (visually indistinguishable). **Default**.
